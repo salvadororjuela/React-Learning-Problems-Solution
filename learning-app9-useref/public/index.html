@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>useRef Hook</title>
+  </head>
+  <body>
+    <h1>useRef Hook</h1>
+    <p>
+      The useRef Hook allows you to persist values between renders. <br>
+      It can be used to store a mutale value that does not cause a re-render when updated. <br>
+      It can be used to access a DOM element directly.
+    </p>
+    <hr>
+
+    <h2>Does Not Cause Re-Renders</h2>
+    <p>
+      If we tried to count how many times our application renders using the useState Hook, <br>
+      we would be caught in an infinite loop since this Hook itself causes a re-render. <br>
+      To avoid this, we can use the useRef Hook.
+    </p>
+    <h3>Example: Use useRef to track application renders.</h3>
+    <div id="useRefApplicationRenders"></div>
+    <p>
+      useRef() only returns one item. It returns an Object called current. <br>
+      When we initialize useRef we set the initial value: useRef(0). <br>
+      It's like doing this: const count = {current: 0}. We can access the count by using count.current. <br>
+    </p> 
+    <hr>
+
+    <h2>Accessing DOM Elements</h2>
+    <p>
+      In genera, we want to let React handle all DOM manipulations. <br>
+      Bet there are some instances where useRef can be used without causing issues. <br>
+      In React, we can add a ref Attribute to an element to access it directly in the DOM.
+    </p>
+    <h3>Example: Use useRef to focus the input:</h3>
+    <div id="accessingDOMElements"></div>
+    <hr>
+
+    <h2>Tracking State Changes</h2>
+    <p>
+      The useRef Hook can also be used to keep track of previous state values. <br>
+      This is because we are able to persist useRef values between renders.
+    </p>
+    <h3>Example: useRef to keep track of previous state values:</h3>
+    <div id="trackingStateChanges"></div>
+    <p>
+      This time we use a combination of useState, useEffect, and useRef to keep track of the previous state. <br>
+      In the useEffect, we are updating the useRef current value each time the inpuValue is updated by <br>
+      entering text into the input field.
+    </p>
+    <hr>
+
+  </body>
+</html>
